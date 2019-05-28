@@ -5,7 +5,10 @@ import org.linlinjava.litemall.admin.annotation.RequiresPermissionsDesc;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 public class Permission {
+
+    // 验证用户是否登录
     private RequiresPermissions requiresPermissions;
+    // 定义目录和按钮
     private RequiresPermissionsDesc requiresPermissionsDesc;
     private String api;
 

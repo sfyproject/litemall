@@ -2,10 +2,18 @@ package org.linlinjava.litemall.admin.vo;
 
 import java.util.List;
 
+/**
+ * 列表层级
+ * @Date: 2019-5-27  17:32
+ * @Params: PermVo.java
+ * @Author: sunfy
+ */
 public class PermVo {
     private String id;
+    // 分类（标签）
     private String label;
     private String api;
+    // 子目录
     private List<PermVo> children;
 
     public String getId() {

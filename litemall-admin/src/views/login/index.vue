@@ -2,6 +2,7 @@
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="title-container">
+        <h3 class="title-xhh">星火晗</h3>
         <h3 class="title">管理员登录</h3>
       </div>
       <el-form-item prop="username">
@@ -23,7 +24,7 @@
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
-      <div style="position:relative">
+      <!-- <div style="position:relative">
         <div class="tips">
           <span> 超级管理员用户名: admin123</span>
           <span> 超级管理员用户名：admin123</span>
@@ -36,7 +37,7 @@
           <span> 推广管理员用户名: promotion123</span>
           <span> 推广管理员用户名：promotion123</span>
         </div>
-      </div>
+      </div> -->
     </el-form>
 
   </div>
@@ -167,7 +168,7 @@ $light_gray:#eee;
     position: absolute;
     left: 0;
     right: 0;
-    width: 520px;
+    width: 460px;
     padding: 35px 35px 15px 35px;
     margin: 120px auto;
   }
@@ -193,6 +194,14 @@ $light_gray:#eee;
   }
   .title-container {
     position: relative;
+    .title-xhh {
+      font-size: 66px;
+      font-weight: 400;
+      color: $light_gray;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
     .title {
       font-size: 26px;
       font-weight: 400;

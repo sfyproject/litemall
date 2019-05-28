@@ -149,6 +149,10 @@ public class AdminRoleController {
     private List<PermVo> systemPermissions = null;
     private Set<String> systemPermissionsString = null;
 
+    /**
+     * 获取权限
+     * @return
+     */
     private List<PermVo> getSystemPermissions(){
         final String basicPackage = "org.linlinjava.litemall.admin";
         if(systemPermissions == null){

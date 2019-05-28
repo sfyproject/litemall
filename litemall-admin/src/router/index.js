@@ -77,6 +77,7 @@ export default new Router({
   routes: constantRouterMap
 })
 
+// 首页中相应的路由配置项
 export const asyncRouterMap = [
   {
     path: '/user',
@@ -407,7 +408,24 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  // --此处的path和文件夹的路径一一对应，必须保证存在相应的路径
+  // -- 一级目录示例
+  // -- 侧边栏已经帮助您做出判断。当您将子项路由到超过> 1个路由的声明之下时，它将自动成为嵌套模式。如果子路由完全等于1，则子路由默认显示为侧边栏中的根路由。如果您不想，可以通过设置alwaysShow: true根路由来禁用此功能。
+  {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'admin',
+        component: () => import('@/views/sys/admin'),
+        name: 'admin',
+        meta: {
+          title: '管理员',
+          icon: 'icon'
+        }
+      }
+    ]
+  },
   {
     path: '/config',
     component: Layout,
@@ -562,5 +580,6 @@ export const asyncRouterMap = [
     hidden: true
   },
 
+  // 最后声明 404 页面
   { path: '*', redirect: '/404', hidden: true }
 ]

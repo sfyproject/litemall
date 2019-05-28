@@ -35,6 +35,9 @@ public class AdminGoodsController {
      * @param order
      * @return
      */
+    /*
+    @RequiresAuthentication: 验证用户是否登录，等同于方法subject.isAuthenticated() 结果为true时。
+     */
     @RequiresPermissions("admin:goods:list")
     @RequiresPermissionsDesc(menu = {"商品管理", "商品管理"}, button = "查询")
     @GetMapping("/list")

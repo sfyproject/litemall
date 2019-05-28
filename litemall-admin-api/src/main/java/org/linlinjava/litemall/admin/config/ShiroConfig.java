@@ -16,6 +16,9 @@ import org.springframework.context.annotation.DependsOn;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * shiro 对应的 过滤器
+ */
 @Configuration
 public class ShiroConfig {
 

@@ -18,6 +18,11 @@ import java.util.*;
 
 public class PermissionUtil {
 
+    /**
+     * 根据目录菜单设置权限
+     * @param permissions
+     * @return
+     */
     public static List<PermVo> listPermVo(List<Permission> permissions) {
         List<PermVo> root = new ArrayList<>();
         for (Permission permission : permissions) {
@@ -25,10 +30,12 @@ public class PermissionUtil {
             RequiresPermissionsDesc requiresPermissionsDesc = permission.getRequiresPermissionsDesc();
             String api = permission.getApi();
 
+            // 获取标签中的目录
             String[] menus = requiresPermissionsDesc.menu();
             if (menus.length != 2) {
                 throw new RuntimeException("目前只支持两级菜单");
             }
+            // 获取一级目录
             String menu1 = menus[0];
             PermVo perm1 = null;
             for (PermVo permVo : root) {
@@ -44,6 +51,7 @@ public class PermissionUtil {
                 perm1.setChildren(new ArrayList<>());
                 root.add(perm1);
             }
+            // 获取二级目录
             String menu2 = menus[1];
             PermVo perm2 = null;
             for (PermVo permVo : perm1.getChildren()) {
