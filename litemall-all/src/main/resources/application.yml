@@ -8,13 +8,14 @@ server:
   port: 8080
 
 # 设置程序启动时日志输出等级
-logging:
-  level:
-    root:  ERROR
-    org.springframework:  ERROR
-    org.mybatis:  ERROR
-    org.linlinjava.litemall.core:  ERROR
-    org.linlinjava.litemall.db:  ERROR
-    org.linlinjava.litemall.admin:  ERROR
-    org.linlinjava.litemall.wx:  ERROR
-    org.linlinjava.litemall:  ERROR
+# 学习中，先使用默认的日志输出级别
+#logging:
+#  level:
+#    root:  ERROR
+#    org.springframework:  ERROR
+#    org.mybatis:  ERROR
+#    org.linlinjava.litemall.core:  ERROR
+#    org.linlinjava.litemall.db:  ERROR
+#    org.linlinjava.litemall.admin:  ERROR
+#    org.linlinjava.litemall.wx:  ERROR
+#    org.linlinjava.litemall:  ERROR
