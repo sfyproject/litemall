@@ -7,13 +7,14 @@ spring:
 server:
   port: 8080
 
-logging:
-  level:
-    root:  ERROR
-    org.springframework:  ERROR
-    org.mybatis:  ERROR
-    org.linlinjava.litemall.core:  ERROR
-    org.linlinjava.litemall.db:  ERROR
-    org.linlinjava.litemall.admin:  ERROR
-    org.linlinjava.litemall.wx:  ERROR
-    org.linlinjava.litemall:  ERROR
+# 此处设置无用
+#logging:
+#  level:
+#    root:  ERROR
+#    org.springframework:  ERROR
+#    org.mybatis:  ERROR
+#    org.linlinjava.litemall.core:  ERROR
+#    org.linlinjava.litemall.db:  ERROR
+#    org.linlinjava.litemall.admin:  ERROR
+#    org.linlinjava.litemall.wx:  ERROR
+#    org.linlinjava.litemall:  ERROR
