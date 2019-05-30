@@ -55,13 +55,16 @@ public class AdminAuthController {
     public Object login(@RequestBody String body, HttpServletRequest request) {
         String username = JacksonUtil.parseString(body, "username");
         String password = JacksonUtil.parseString(body, "password");
+        logger.info("【AdminAuthController】-login==="+username+":"+password);
 
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             return ResponseUtil.badArgument();
         }
 
+        // 创建shiro主体对象
         Subject currentUser = SecurityUtils.getSubject();
         try {
+            // 调用shiro登陆方法，并根据login方法返回结果，抛出相应的异常
             currentUser.login(new UsernamePasswordToken(username, password));
         } catch (UnknownAccountException uae) {
             logHelper.logAuthFail("登录", "用户帐号或密码不正确");
@@ -75,7 +78,9 @@ public class AdminAuthController {
             return ResponseUtil.fail(ADMIN_INVALID_ACCOUNT, "认证失败");
         }
 
+        // 用户成功登陆后，获取当前登陆主体
         currentUser = SecurityUtils.getSubject();
+        // 更新管理员表中ip及最后登陆时间等字段信息
         LitemallAdmin admin = (LitemallAdmin) currentUser.getPrincipal();
         admin.setLastLoginIp(IpUtil.getIpAddr(request));
         admin.setLastLoginTime(LocalDateTime.now());

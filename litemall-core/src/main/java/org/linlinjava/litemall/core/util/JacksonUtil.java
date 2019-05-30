@@ -8,7 +8,24 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * fasterxml 工具类
+ * @Date: 2019-5-30  18:06
+ * @Params: JacksonUtil.java
+ * @Author: sunfy
+ */
 public class JacksonUtil {
+
+    /**
+     * fasterxml 工具类
+     * 通过springBoot中集成的fasterxml对象，编写工具类
+     * 此方法的主要目的在于，根据body及相应字段的名称或者其具体值
+     *
+     * 以下各方法根据需求返回不同类型的数据
+     *
+     * @Date: 2019-5-30  18:07
+     * @Author: sunfy
+     */
     public static String parseString(String body, String field) {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode node = null;
@@ -22,7 +39,6 @@ public class JacksonUtil {
         }
         return null;
     }
-
 
     public static List<String> parseStringList(String body, String field) {
         ObjectMapper mapper = new ObjectMapper();

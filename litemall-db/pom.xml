@@ -41,6 +41,7 @@
 
 
     <build>
+        <!--        引入MyBatis - generator 代码生成器，并设置相应配置的文件的路径-->
         <plugins>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
